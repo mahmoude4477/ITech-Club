@@ -20,6 +20,10 @@ import LogoIcon from "./LogoIcon";
 import Image from "next/image";
 import { ModeToggle } from "./ModeToggle";
 import { useTheme } from "next-themes";
+import imgDark from "../../public/iconLight.png";
+import imgLight from "../../public/icon2.png";
+
+import ImgNavBar from "./ImgNavBar";
 interface RouteProps {
   href: string;
   label: string;
@@ -51,23 +55,32 @@ const routeList: RouteProps[] = [
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { theme, setTheme } = useTheme();
+  const [Img, setImg] = useState<any>(theme === "dark" ? imgLight : imgDark);
+  console.log(theme);
+
+  useEffect(() => {
+    if (theme === "dark") {
+      setImg("/icon2.png");
+    } else {
+      setImg("/iconLight.png");
+    }
+  }, [theme]);
+
   return (
-    <header className="sticky border-b-[1px] top-0 z-40 w-full bg-white dark:border-b-slate-700 dark:bg-background">
-      <NavigationMenu className="mx-auto">
+    <header
+      dir="rtl"
+      className="sticky border-b-[1px] top-0 z-40 w-full bg-white dark:border-b-slate-700 dark:bg-background"
+    >
+      <NavigationMenu dir="rtl" className="mx-auto">
         <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between ">
           <NavigationMenuItem className="font-bold flex">
             <a
               href="#Name"
               className="ml-2 font-bold space-x-5 text-xl flex items-center justify-center"
             >
-              <Image
-                src={theme == "dark" ? "/icon2.png" : "iconLight.png"}
-                alt="logo"
-                height={50}
-                width={50}
-                unoptimized
-              />
-              <p>ITech Club</p>
+              <ImgNavBar Img={Img} />
+              {/* <Image src={Img} alt="logo" height={50} width={50} unoptimized /> */}
+              <p className="ms-5">ITech Club</p>
             </a>
           </NavigationMenuItem>
 
