@@ -1,12 +1,17 @@
 import Animations from "./Animation";
 
 const Goals = () => {
-  const Goals = ["هدف الاول", "هدف الثاني", "هدف الثالث"];
+  const Goals = [
+    "إقامة الفعاليات والبرامج التي تساهم في تطوير المهارات القيادية والتقنية",
+    " تعزيز القيم الاخلاقية والمشاركة المجتمعية وروح العمل الجماعي",
+    " تكوين بيئة تعليمية وإبداعية تمكن الطلاب من بناء علاقات مهنية واكاديمية",
+    "تشجيع الطلاب على المشاركة في المسابقات والبرامج المتنوعة داخل وخارج الجامعة",
+  ];
 
   return (
     <Animations>
-      <div id="Goals" className="h-screen flex flex-col justify-center ">
-        <h1 className="text-center mb-5 text-5xl md:text-6xl font-bold">
+      <div id="Goals" className="h-screen flex  flex-col justify-center ">
+        <h1 className="text-center mb-5 pt-9  text-5xl md:text-6xl font-bold bg-gradient-to-r bg-clip-text from-[#6879B8] text-transparent  to-[#B94C96]">
           الأهداف
         </h1>
 

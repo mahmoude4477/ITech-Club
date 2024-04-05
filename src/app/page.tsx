@@ -12,29 +12,31 @@ export default function Home() {
     {
       id: "Name",
       title: "ITech Club",
-      desc: "طموحاتنا تتجاوز المستحيل واعمالنا خير دليل",
+      desc: "نادي كلية علوم وهندسة الحاسب الآلي",
       classNameForTitle:
         "inline bg-gradient-to-r from-[#6879B8]  to-[#B94C96] text-transparent bg-clip-text",
-      classNameForDesc: "text-lg",
+      classNameForDesc: "text-lg text-center",
     },
     {
       id: "About",
       title: "من نحن",
-      desc: "نادي تابع لجامعة طيبة ، مُهتم بالتقنية",
-      classNameForTitle: "inline bg-clip-text",
-      classNameForDesc: "text-lg",
+      desc: "نادي تخصصي طلابي تطوعي يتبع لعمادة شؤون الطلاب في جامعة طيبة، يهدف الى بناء مجتمع حاسوبي تقني يهتم بإنتاج المعرفة وإنشاء جيل تقني واعد من خلال برامج متنوعة وفعالة",
+      classNameForTitle:
+        "inline text-center bg-gradient-to-r from-[#6879B8]  to-[#B94C96] text-transparent bg-clip-text",
+      classNameForDesc: "text-lg text-center",
     },
     {
       id: "Vision",
       title: "الرؤية",
-      desc: "رؤية النادي",
-      classNameForTitle: "inline bg-clip-text",
-      classNameForDesc: "text-lg",
+      desc: "ان نكون من افضل الاندية الجامعية الرائدة والمتميزة في استقطاب الموهوبين وصقل هوايتهم ومهاراتهم",
+      classNameForTitle:
+        "inline bg-clip-text bg-gradient-to-r from-[#6879B8] text-transparent  to-[#B94C96]",
+      classNameForDesc: "text-lg text-center",
     },
   ];
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full ">
       {0 ? (
         <StartIcon />
       ) : (
@@ -42,7 +44,7 @@ export default function Home() {
           <Navbar />
 
           <div
-            className=""
+            className="container"
             style={{ position: "relative", overflow: "hidden" }}
           >
             {introList.map((intro, index) => (

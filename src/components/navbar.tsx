@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -19,6 +19,7 @@ import { Menu } from "lucide-react";
 import LogoIcon from "./LogoIcon";
 import Image from "next/image";
 import { ModeToggle } from "./ModeToggle";
+import { useTheme } from "next-themes";
 interface RouteProps {
   href: string;
   label: string;
@@ -49,6 +50,7 @@ const routeList: RouteProps[] = [
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const { theme, setTheme } = useTheme();
   return (
     <header className="sticky border-b-[1px] top-0 z-40 w-full bg-white dark:border-b-slate-700 dark:bg-background">
       <NavigationMenu className="mx-auto">
@@ -56,16 +58,16 @@ export const Navbar = () => {
           <NavigationMenuItem className="font-bold flex">
             <a
               href="#Name"
-              className="ml-2 font-bold text-xl flex items-center justify-center"
+              className="ml-2 font-bold space-x-5 text-xl flex items-center justify-center"
             >
               <Image
-                src={"/icon2.png"}
+                src={theme == "dark" ? "/icon2.png" : "iconLight.png"}
                 alt="logo"
                 height={50}
                 width={50}
                 unoptimized
               />
-              ITech Club
+              <p>ITech Club</p>
             </a>
           </NavigationMenuItem>
 

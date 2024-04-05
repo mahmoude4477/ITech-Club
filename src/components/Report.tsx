@@ -6,7 +6,7 @@ const Reports = () => {
   return (
     <Animations>
       <div id="Reports" className="h-screen flex flex-col justify-center ">
-        <h1 className="text-center mb-5 text-5xl md:text-6xl font-bold">
+        <h1 className="text-center mb-5 text-5xl md:text-6xl font-bold bg-gradient-to-r bg-clip-text from-[#6879B8] text-transparent  to-[#B94C96]">
           التقارير
         </h1>
         {/* <ul dir="rtl" className="ps-5 mt-2 space-y-1 list-disc list-inside">

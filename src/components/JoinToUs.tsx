@@ -1,17 +1,24 @@
-import Link from "next/link";
-import { buttonVariants } from "./ui/button";
+"use client";
+import { Button } from "./ui/button";
 import Animations from "./Animation";
+import { useToast } from "@/components/ui/use-toast";
 
 const JoinToUs = () => {
+  const { toast } = useToast();
   return (
     <Animations>
       <div className="h-screen flex  items-center flex-col justify-center">
-        {/* <h1 className="text-center mb-5 text-5xl md:text-6xl font-bold">
-        Join to us
-      </h1> */}
-        <Link className={buttonVariants({ size: "lg" })} href="/">
+        <Button
+          onClick={() => {
+            toast({
+              variant: "destructive",
+              title: "التسجيل مغلق حاليا",
+            });
+          }}
+          size={"lg"}
+        >
           انضم للنادي
-        </Link>
+        </Button>
       </div>
     </Animations>
   );
