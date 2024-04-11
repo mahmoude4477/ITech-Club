@@ -1,3 +1,4 @@
+"use client";
 import Animations from "@/components/Animation";
 import { Footer } from "@/components/Footer";
 import Goals from "@/components/Goals";
@@ -6,8 +7,10 @@ import JoinToUs from "@/components/JoinToUs";
 import { Navbar } from "@/components/navbar";
 import Reports from "@/components/Report";
 import StartIcon from "@/components/StartIcon";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [isStart, setIsStart] = useState<boolean>(true);
   const introList = [
     {
       id: "Name",
@@ -35,9 +38,15 @@ export default function Home() {
     },
   ];
 
+  useEffect(() => {
+    setTimeout(() => {
+      setIsStart(false);
+    }, 2000);
+  }, []);
+
   return (
     <div className="w-full h-full ">
-      {0 ? (
+      {isStart ? (
         <StartIcon />
       ) : (
         <>

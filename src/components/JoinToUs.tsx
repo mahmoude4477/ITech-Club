@@ -7,7 +7,10 @@ const JoinToUs = () => {
   const { toast } = useToast();
   return (
     <Animations>
-      <div className="h-screen flex  items-center flex-col justify-center">
+      <div
+        id="JoinToUs"
+        className="h-screen flex  items-center flex-col justify-center"
+      >
         <Button
           onClick={() => {
             toast({

@@ -1,7 +1,13 @@
+import Link from "next/link";
 import Animations from "./Animation";
 
 const Reports = () => {
-  const ReportsList = ["تقرير الاول", "تقرير الثاني", "تقرير الثالث"];
+  const ReportsList = [
+    {
+      href: "https://drive.google.com/file/d/1ONibXKKbT3T85tinKsemSegaGbPX3qAV/view?usp=sharing",
+      label: "رابط ملف النادي وتقريره",
+    },
+  ];
 
   return (
     <Animations>
@@ -16,9 +22,13 @@ const Reports = () => {
         </ul> */}
         <div dir="rtl" className="flex mb-1 space-y-3 flex-col">
           {ReportsList.map((Report, index) => (
-            <a className="border w-full p-5   " key={index}>
-              {Report}
-            </a>
+            <Link
+              href={Report.href}
+              className="border w-full p-5 font-medium text-blue-600 dark:text-blue-500 hover:underline "
+              key={index}
+            >
+              {Report.label}
+            </Link>
           ))}
         </div>
       </div>

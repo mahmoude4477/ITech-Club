@@ -17,6 +17,7 @@ const StartIcon = () => {
           width={500}
           height={500}
           alt="icon"
+          priority
         />
       </motion.div>
     </div>

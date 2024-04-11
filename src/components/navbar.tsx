@@ -12,12 +12,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { buttonVariants } from "@/components/ui/button";
 import { Menu } from "lucide-react";
-//import { ModeToggle } from "./mode-toggle";
-import LogoIcon from "./LogoIcon";
-import Image from "next/image";
 import { ModeToggle } from "./ModeToggle";
 import { useTheme } from "next-themes";
 import imgDark from "../../public/iconLight.png";
@@ -50,13 +46,16 @@ const routeList: RouteProps[] = [
     href: "#Reports",
     label: "التقارير",
   },
+  {
+    href: "#JoinToUs",
+    label: "انضم للنادي",
+  },
 ];
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { theme, setTheme } = useTheme();
   const [Img, setImg] = useState<any>(theme === "dark" ? imgLight : imgDark);
-  console.log(theme);
 
   useEffect(() => {
     if (theme === "dark") {
