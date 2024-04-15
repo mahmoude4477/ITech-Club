@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const StartIcon = () => {
   return (
-    <div className="h-screen  flex flex-col justify-center items-center">
+    <div className="h-screen flex flex-col justify-center items-center">
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -13,7 +13,7 @@ const StartIcon = () => {
       >
         <Image
           src={"/icon3.png"}
-          className="bg-white rounded-lg"
+          className=" rounded-lg"
           width={500}
           height={500}
           alt="icon"

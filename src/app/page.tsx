@@ -41,7 +41,7 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       setIsStart(false);
-    }, 2000);
+    }, 1000);
   }, []);
 
   return (
@@ -54,7 +54,10 @@ export default function Home() {
 
           <div
             className="container"
-            style={{ position: "relative", overflow: "hidden" }}
+            style={{
+              position: "relative",
+              overflow: "hidden",
+            }}
           >
             {introList.map((intro, index) => (
               <Animations key={index}>
