@@ -5,7 +5,7 @@ const Reports = () => {
   const ReportsList = [
     {
       href: "https://drive.google.com/file/d/1ZDAb0RKBDqZOnzoM6x-XnQv-Vn38jS_Y/view?usp=sharing",
-      label: "رابط ملف النادي وتقريره 1445",
+      label: "رابط ملف النادي وتقريره للعام ١٤٤٥",
     },
   ];
 
