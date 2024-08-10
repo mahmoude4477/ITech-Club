@@ -4,8 +4,8 @@ import Animations from "./Animation";
 const Reports = () => {
   const ReportsList = [
     {
-      href: "https://drive.google.com/file/d/1ONibXKKbT3T85tinKsemSegaGbPX3qAV/view?usp=sharing",
-      label: "رابط ملف النادي وتقريره للفصل الدراسي الاول 1445",
+      href: "https://drive.google.com/file/d/1ZDAb0RKBDqZOnzoM6x-XnQv-Vn38jS_Y/view?usp=sharing",
+      label: "رابط ملف النادي وتقريره 1445",
     },
   ];
 
