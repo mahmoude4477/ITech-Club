@@ -16,13 +16,8 @@ const Intro = ({
   className: string;
   id: string;
 }) => {
-  const style = {
-    // backgroundImage: `url(${bg.src})`,
-    // backgroundSize: "cover",
-  };
   return (
     <div
-      style={style}
       id={id}
       className={clsx(
         "h-screen flex justify-center items-center flex-col",
@@ -32,7 +27,7 @@ const Intro = ({
       <main className="text-5xl mb-5 md:text-6xl font-bold">
         <h1 className="inline">
           <span className={classNameForTitle}>{title}</span>{" "}
-        </h1>{" "}
+        </h1>
       </main>
       <p className={classNameForDesc}>{desc}</p>
     </div>

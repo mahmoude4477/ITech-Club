@@ -7,7 +7,8 @@ import JoinToUs from "@/components/JoinToUs";
 import { Navbar } from "@/components/navbar";
 import Reports from "@/components/Report";
 import StartIcon from "@/components/StartIcon";
-import { useEffect, useState } from "react";
+import { Separator } from "@/components/ui/separator";
+import React, { useEffect, useState } from "react";
 
 export default function Home() {
   const [isStart, setIsStart] = useState<boolean>(true);
@@ -31,9 +32,17 @@ export default function Home() {
     {
       id: "Vision",
       title: "الرؤية",
-      desc: "ان نكون من افضل الاندية الجامعية الرائدة والمتميزة في استقطاب الموهوبين وصقل هوايتهم ومهاراتهم",
+      desc: "للتميز والريادة في تقديم أنشطة إثرائية تعود بالنفع على الطلبة والمجتمع، وتطوير مهارات الطلاب وتبادل الخبرات بينهم لمساعدتهم على التطور والمشاركة في المسابقات المحلية والدولية وتعزيز روح القيادة والتعاون لديهم، وأن نكون من أفضل الأندية الطلابية التي تعمل على تحقيق رسالة الجامعة.",
       classNameForTitle:
         "inline bg-clip-text bg-gradient-to-r from-[#6879B8] text-transparent  to-[#B94C96]",
+      classNameForDesc: "text-lg text-center",
+    },
+    {
+      id: "StudentObjectives",
+      title: "الفائدة التي تعود على الطالب عند المشاركة في النادي",
+      desc: "الأندية الطلابية نستطيع وصفها بأنها تجمع لجميع الطلاب لمشاركة الاهتمامات واكتساب الخبرات وتعزيز العلاقات المهنية والأكاديمية عن طريق المشاركة في فعاليات النادي / دورات، معسكرات، مسابقات وغيرها الكثير وكل هذا سوف يعود بالنفع على الطلبة لتجهيزهم الى سوق العمل وكما انه يتم إضافة المشاركات في السيرة الذاتية مستقبلاً للتقديم على الوظائف.",
+      classNameForTitle:
+        "inline text-center bg-gradient-to-r from-[#6879B8]  to-[#B94C96] text-transparent bg-clip-text",
       classNameForDesc: "text-lg text-center",
     },
   ];
@@ -45,7 +54,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="w-full h-full ">
+    <div dir="rtl" className="w-full h-full ">
       {isStart ? (
         <StartIcon />
       ) : (
@@ -59,7 +68,25 @@ export default function Home() {
               overflow: "hidden",
             }}
           >
-            {introList.map((intro, index) => (
+            {introList.slice(0, 3).map((intro, index) => (
+              <React.Fragment key={index}>
+                <Animations>
+                  <Intro
+                    id={intro.id}
+                    className={index % 2 == 0 ? "bg-gradient-to-r " : ""}
+                    classNameForTitle={intro.classNameForTitle}
+                    classNameForDesc={intro.classNameForDesc}
+                    key={index}
+                    title={intro.title}
+                    desc={intro.desc}
+                  ></Intro>
+                </Animations>
+                <Separator />
+              </React.Fragment>
+            ))}
+            <Goals />
+            <Separator />
+            {introList.slice(3).map((intro, index) => (
               <Animations key={index}>
                 <Intro
                   id={intro.id}
@@ -72,8 +99,9 @@ export default function Home() {
                 ></Intro>
               </Animations>
             ))}
-            <Goals />
+            <Separator />
             <Reports />
+            <Separator />
             <JoinToUs />
             <Footer />
           </div>
